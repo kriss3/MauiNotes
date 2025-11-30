@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiNotes.App.Pages.CounterPage"
-             Title="CounterPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Counter"
+			 x:DataType="AbsoluteLayout">
+	<VerticalStackLayout Padding="30" Spacing="20">
+		<Label Text="Button click counter" FontSize="24" HorizontalOptions="Center" />
+		<Label x:Name="CounterLabel" Text="Clicked 0 times." FontSize="18" HorizontalOptions="Center" />
+		<Button x:Name="CounterButton" Text="Click me" Clicked="OnCounterClicked" HorizontalOptions="Center" />
+	</VerticalStackLayout>
 </ContentPage>
+	
