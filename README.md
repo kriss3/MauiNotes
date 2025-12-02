@@ -2,8 +2,8 @@
 
 MauiNotes/
  | AppShell.xaml
- |_ App.xaml
- ├── MainPage.xaml
+ |- App.xaml
+ |- MainPage.xaml
  ├── Pages/
  │     ├── CounterPage.xaml
  │     ├── SettingsPage.xaml
