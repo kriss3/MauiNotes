@@ -18,3 +18,8 @@ MauiNotes/
  ├── Services/            
  ├── Resources/           
  └── Platforms/
+
+ ## Adding a Data Providing API:
+ MauiNotes.sln
+ |-- MauiNotes.App        (MAUI)
+ |__ MauiNotes.Api        (Web API backend)
