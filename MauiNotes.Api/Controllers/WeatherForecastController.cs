@@ -1,3 +1,4 @@
+using MauiNotes.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MauiNotes.Api.Controllers;

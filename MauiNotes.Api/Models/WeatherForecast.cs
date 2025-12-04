@@ -1,4 +1,4 @@
-namespace MauiNotes.Api;
+namespace MauiNotes.Api.Models;
 
 public class WeatherForecast
 {
