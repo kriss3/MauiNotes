@@ -1,4 +1,6 @@
 
+using MauiNotes.Api.Services;
+
 namespace MauiNotes.Api;
 
 public class Program
@@ -8,6 +10,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddSingleton<IWeatherService, WeatherService>();
 
         builder.Services.AddControllers();
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
