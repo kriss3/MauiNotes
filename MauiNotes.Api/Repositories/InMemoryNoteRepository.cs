@@ -10,6 +10,15 @@ public class InMemoryNoteRepository : INoteRepository
 		new Note { Id = 2, Title = "Second note", Content = "You can create, update, and delete notes here." }
 	];
 
+	private int _nextId = 3;
+
+	public Task<List<Note>> GetAllAsync()
+	{
+		// Return a copy to avoid external mutation of internal list
+		return Task.FromResult(_notes.ToList());
+	}
+
+
 	public Task<Note> AddAsync(Note note)
     {
         throw new NotImplementedException();
@@ -19,10 +28,6 @@ public class InMemoryNoteRepository : INoteRepository
     {
         throw new NotImplementedException();
     }
-
-    public Task<List<Note>> GetAllAsync()
-    {
-        throw new NotImplementedException();
     }
 
     public Task<Note?> GetByIdAsync(int id)
