@@ -4,8 +4,13 @@ namespace MauiNotes.Api.Repositories;
 
 public class InMemoryNoteRepository : INoteRepository
 {
-    public Task<Note> AddAsync(Note note)
-    {
+	private readonly List<Note> _notes =
+    [
+        new Note { Id = 1, Title = "Welcome to MAUI", Content = "This note comes from the Web API (in-memory)." },
+		new Note { Id = 2, Title = "Second note", Content = "You can create, update, and delete notes here." }
+	];
+
+	public Task<Note> AddAsync(Note note)
     {
         throw new NotImplementedException();
     }
