@@ -21,8 +21,10 @@ public class InMemoryNoteRepository : INoteRepository
 
 	public Task<Note> AddAsync(Note note)
     {
-        throw new NotImplementedException();
-    }
+		note.Id = _nextId++;
+		_notes.Add(note);
+		return Task.FromResult(note);
+	}
 
     public Task<bool> DeleteAsync(int id)
     {
