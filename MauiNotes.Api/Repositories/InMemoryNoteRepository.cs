@@ -28,12 +28,12 @@ public class InMemoryNoteRepository : INoteRepository
     {
         throw new NotImplementedException();
     }
-    }
 
     public Task<Note?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
-    }
+		var note = _notes.FirstOrDefault(n => n.Id == id);
+		return Task.FromResult(note);
+	}
 
     public Task<Note?> UpdateAsync(Note note)
     {
