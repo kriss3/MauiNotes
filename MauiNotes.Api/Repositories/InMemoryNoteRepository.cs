@@ -46,6 +46,15 @@ public class InMemoryNoteRepository : INoteRepository
 
     public Task<Note?> UpdateAsync(Note note)
     {
-        throw new NotImplementedException();
-    }
+		var existing = _notes.FirstOrDefault(n => n.Id == note.Id);
+		if (existing is null)
+		{
+			return Task.FromResult<Note?>(null);
+		}
+
+		existing.Title = note.Title;
+		existing.Content = note.Content;
+
+		return Task.FromResult<Note?>(existing);
+	}
 }
