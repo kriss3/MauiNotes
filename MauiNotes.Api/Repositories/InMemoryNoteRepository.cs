@@ -28,8 +28,15 @@ public class InMemoryNoteRepository : INoteRepository
 
     public Task<bool> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
-    }
+		var existing = _notes.FirstOrDefault(n => n.Id == id);
+		if (existing is null)
+		{
+			return Task.FromResult(false);
+		}
+
+		_notes.Remove(existing);
+		return Task.FromResult(true);
+	}
 
     public Task<Note?> GetByIdAsync(int id)
     {
